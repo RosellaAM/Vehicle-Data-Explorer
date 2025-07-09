@@ -11,13 +11,13 @@ st.title('Análisis  de Vehículos Usados')
 # Muestra una muestra de la base de datos en la aplicación.
 st.subheader('Vista previa de los datos (10 registros aleatorios)')
 st.dataframe(vehicles.sample(10))
-with st.expander('Ver datos completos (click para expandir)'):
+with st.expander('Ver datos completos'):
     # Muestra dataset completo (limitado a 500 filas).
     st.dataframe(vehicles.head(500))
 
 # Muestra casillas de verificación para seleccionar la grafica a mostrar.
-show_hist_price = st.checkbox('Mostrar Histograma de Precios', values=True)
-show_scatter_km_price = st.checkbox('Mostrar Gráfica de Dispersión de Kilometraje vs Precio', values=True)
+show_hist_price = st.checkbox('Mostrar Histograma de Precios', value=True)
+show_scatter_km_price = st.checkbox('Mostrar Gráfica de Dispersión de Kilometraje vs Precio', value=True)
 
 # Crea histograma de precios y la acción que se realizara al picarle al checkbox.
 if show_hist_price:
@@ -49,16 +49,18 @@ if show_scatter_km_price:
     selected_condition = st.sidebar.multiselect(
         'Condición del Vehículo',
         options=vehicles['condition'].unique(),
-        default=['good', 'excellent']
-    )
+        default=['good', 'excellent'])
+    filtered_vehicles = vehicles[vehicles['condition'].isin(selected_condition)]
     # Crea grafica de dispersión.
-    fig2 = px.scatter(vehicles[vehicles['condition'].isin(selected_condition)], 
-                  x='odometer',
-                  y='price',
-                  color='condition',
-                  title='Relación Precio vs. Kilometraje',
-                  labels={'odometer': 'Kilometraje', 'price': 'Precio (USD)'},
-                  trendline='lowess',
-                  hover_data=['model_year', 'transmission'])
+    if len(filtered_vehicles) == 0:
+        st.warning('No hay datos disponibles con los filtros seleccionados.')
+    else:
+        fig2 = px.scatter(filtered_vehicles, 
+                           x='odometer',
+                           y='price',
+                           color='condition',
+                           title='Relación Precio vs. Kilometraje',
+                           labels={'odometer': 'Kilometraje', 'price': 'Precio (USD)'},
+                           trendline='lowess')
     # Muestra el grafico interactivo en la aplicación.
     st.plotly_chart(fig2, use_container_width=True)
