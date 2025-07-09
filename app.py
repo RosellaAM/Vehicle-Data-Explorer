@@ -50,12 +50,13 @@ if show_scatter_km_price:
         'Condición del Vehículo',
         options=vehicles['condition'].unique(),
         default=['good', 'excellent'])
-    filtered_vehicles = vehicles[vehicles['condition'].isin(selected_condition)]
-    # Crea grafica de dispersión.
-    if len(filtered_vehicles) == 0:
+    # Filtra los datos por las condiciones seleccionadas.
+    filtered_vehicles_by_con = vehicles[vehicles['condition'].isin(selected_condition)]
+    # Crea grafica de dispersión verificando que si se apliquen los filtros.
+    if len(filtered_vehicles_by_con) == 0:
         st.warning('No hay datos disponibles con los filtros seleccionados.')
     else:
-        fig2 = px.scatter(filtered_vehicles, 
+        fig2 = px.scatter(filtered_vehicles_by_con, 
                            x='odometer',
                            y='price',
                            color='condition',
