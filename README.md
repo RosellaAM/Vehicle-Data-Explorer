@@ -1,3 +1,3 @@
-# Projecto-Sprint-7 #
+# Proyecto-Sprint-7 #
 
 Este proyecto consiste en el desarrollo de una aplicación web interactiva para el análisis exploratorio de datos de vehículos. Utilizando tecnologías como Python, Streamlit y Plotly Express, hemos creado un dashboard que permite visualizar patrones y características clave del conjunto de datos mediante gráficos interactivos. El objetivo principal es demostrar habilidades prácticas en ingeniería de software, desde la configuración de entornos virtuales hasta el despliegue de aplicaciones en la nube, pasando por el análisis básico de datos y la creación de visualizaciones interactivas. La aplicación final, desplegada en Render, ofrece a los usuarios la posibilidad de explorar los datos mediante histogramas y gráficos de dispersión con solo hacer clic en botones interactivos.
