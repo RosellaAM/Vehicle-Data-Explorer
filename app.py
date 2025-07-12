@@ -34,7 +34,7 @@ if show_hist_price:
     # Carga slide bar con el rango de precios.
     price_range = st.slider('Rango de Precios(USD)', 
                             min_value= int(vehicles['price'].min()), 
-                            max_value= int(vehicles['price'].quantile(0.95)),
+                            max_value= int(vehicles['price'].max()),
                             value=(5000, 50000))
     # Filtra los datos por el rango de precios seleccionados.
     vehicles_price_filt = vehicles[(vehicles['price'] >= price_range[0]) & (vehicles['price'] <= price_range[1])]
@@ -101,11 +101,12 @@ if show_bar_fuel:
         data.columns = ['fuel', 'counts']
     # Crea gráfica de barras.
     fig3 = px.bar(data, 
-                  x= 'fuel', 
-                  y='Price',
+                  x='fuel', 
+                  y='price',
                   title=f'Precio {metric} por Tipo de Combustible',
                   labels={'fuel': 'Tipo de Combustible', 'price': 'Precio (USD)'},
-                  color='fuel')
+                  color='fuel',
+                  color_discrete_sequence=px.colors.qualitative.Pastel)
     # Muestra el gráfico interactivo en la aplicación.
     st.plotly_chart(fig3, use_container_width=True)
     # Crea divisor entre las gráficas.
