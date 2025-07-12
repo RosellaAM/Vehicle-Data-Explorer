@@ -105,8 +105,8 @@ if show_bar_fuel:
                   y='price',
                   title=f'Precio {metric} por Tipo de Combustible',
                   labels={'fuel': 'Tipo de Combustible', 'price': 'Precio (USD)'},
-                  color='fuel',
-                  color_discrete_sequence=px.colors.qualitative.Pastel)
+                  color='fuel'
+                  )
     # Muestra el gráfico interactivo en la aplicación.
     st.plotly_chart(fig3, use_container_width=True)
     # Crea divisor entre las gráficas.
@@ -135,7 +135,8 @@ if show_boxplot_days:
                       y='days_listed',
                       title='Distribución de Días en el Mercado por Condión',
                       labels={'condition': 'Condición del Vehículo', 'days_listed': 'Días en el Mercado'},
-                      color='condition'
+                      color='condition',
+                      color_discrete_sequence=px.colors.qualitative.Pastel1
                       )
     # Muestra el gráfico interactiva en la aplicación.
     st.plotly_chart(fig4, use_container_width=True)
