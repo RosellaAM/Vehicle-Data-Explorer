@@ -3,7 +3,7 @@ import plotly.express as px
 import streamlit as st
 
 # Carga el dataset de vehículos.
-vehicles = pd.read_csv("/Users/Rosella/Library/Mobile Documents/com~apple~CloudDocs/Python Projects/Projecto-Sprint-7/vehicles_us.csv")
+vehicles = pd.read_csv("/Users/Rosella/Downloads/vehicles_us.csv")
 
 # Crea el titulo de la aplicación.
 st.title('Análisis  de Vehículos Usados')
