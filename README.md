@@ -14,7 +14,7 @@ Este proyecto consiste en el desarrollo de una aplicación web interactiva para 
 ## Demo
 Puedes acceder a la aplicación desplegada aquí:
 
-🔗 **Enlace principal (Render.com)**
+🔗 *Enlace principal (Render.com)*
 
 👉 https://proyecto-sprint-7-2-e9om.onrender.com/
 
