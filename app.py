@@ -138,8 +138,34 @@ if show_boxplot_days:
                       color='condition',
                       color_discrete_sequence=px.colors.qualitative.Pastel1
                       )
-    # Muestra el gráfico interactiva en la aplicación.
+    # Muestra el gráfico interactivo en la aplicación.
     st.plotly_chart(fig4, use_container_width=True)
     # Crea divisor entre las graficas.
     st.divider()
 
+# Crea matriz de correlación.
+if show_corr:
+    # Carga mensaje.
+    st.write('***Matriz de correlación por diferentes variables***')
+    st.caption('Selecciona las variables a relacionar.')
+    # Filtra los datos por columnas numericas y exluye 'is_4wd'.
+    numeric_cols = vehicles.select_dtypes(include=['int64', 'float64']).columns.tolist()
+    numeric_cols = [col for col in numeric_cols if col != 'is_4wd']
+    # Carga multiselect con variables.
+    selected_vars = st.multiselect("Variables",
+                   options=numeric_cols,
+                   default=['price', 'odometer', 'model_year']
+                   )
+    # Crea la correlación.
+    if len(selected_vars) >= 2:
+        corr_matrix = vehicles[selected_vars].corr()
+    # Crea la gráfica.
+    fig5 = px.imshow(corr_matrix,
+                     x=selected_vars,
+                     y=selected_vars,
+                     title='Matriz de Correlación sobre Variables Númericas', 
+                     labels={'x': 'variable', 'y': 'variable'},
+                     color_continuous_scale='RdBu'
+                     )
+    # Muestra el gráfico interactivo en la aplicación.
+    st.plotly_chart(fig5, use_container_width=True)
