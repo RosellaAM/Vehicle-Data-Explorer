@@ -58,11 +58,13 @@ if show_scatter_km_price:
     st.write('***Gráfica de dispersión: kilometraje vs precio***')
     st.caption('Selecciona los diferentes filtros para ver mas información sobre como afectan las condiciones el kilometraje y precio.')
     # Carga pills con filtros.
+    vehicles_cond_km = vehicles['condition'].unique()
     selected_condition_km = st.pills("Filtros", 
-             selection_mode="multi", 
-             options=vehicles['condition'].unique(), 
-             default=['good', 'excellent']
-             )
+                                     selection_mode="multi", 
+                                     options=vehicles_cond_km, 
+                                     default=['good', 'excellent'],
+                                     key='km'
+                                     )
     # Filtra los datos por las condiciones seleccionadas.
     filtered_vehicles_by_con = vehicles[vehicles['condition'].isin(selected_condition_km)]
     # Crea grafica de dispersión verificando que si se apliquen los filtros.
@@ -119,11 +121,13 @@ if show_boxplot_days:
     st.write('***Gráfica de distribución de los días en el mercado por su condición***')
     st.caption('Modifíca los filtros para ver las diferentes condiciones')
     # Carga pills con filtros.
-    selected_condition_d = st.pills("Filtros", 
-             selection_mode="multi", 
-             options=vehicles['condition'].unique(), 
-             default=['good', 'excellent']
-             )
+    vehicles_con_d = vehicles['condition'].unique()
+    selected_condition_d = st.pills("Condiciones del Vehículo", 
+                                    selection_mode="multi", 
+                                    options=vehicles_con_d, 
+                                    default=['good', 'excellent'],
+                                    key='days'
+                                    )
     # Filtra los datos.
     filtered_data_by_con_d = vehicles[vehicles['condition'].isin(selected_condition_d)]
     # Verifica que si hay datos con las condicones aplicadas.
@@ -158,14 +162,16 @@ if show_corr:
                    )
     # Crea la correlación.
     if len(selected_vars) >= 2:
-        corr_matrix = vehicles[selected_vars].corr()
+        corr_matrix = vehicles[selected_vars].corr().round(2)
     # Crea la gráfica.
     fig5 = px.imshow(corr_matrix,
                      x=selected_vars,
                      y=selected_vars,
                      title='Matriz de Correlación sobre Variables Númericas', 
-                     labels={'x': 'variable', 'y': 'variable'},
-                     color_continuous_scale='RdBu'
+                     labels=dict(x='variable', y='variable', color='Correlación'),
+                     color_continuous_scale='RdBu_r',
+                     range_color=[-1, 1],
+                     text_auto=True
                      )
     # Muestra el gráfico interactivo en la aplicación.
     st.plotly_chart(fig5, use_container_width=True)
