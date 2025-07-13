@@ -16,5 +16,6 @@ Puedes acceder a la aplicación desplegada aquí:
 🔗 **Enlace principal (Render.com)**
 👉 https://proyecto-sprint-7-2-e9om.onrender.com/
 
+
 🔗 **Enlace alternativo más rápido(Streamlit Cloud)**
 👉 https://projecto-sprint-7-app.streamlit.app/
