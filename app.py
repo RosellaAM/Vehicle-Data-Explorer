@@ -93,24 +93,24 @@ if show_bar_fuel:
                           options=['Promedio', 'Mediana', 'Conteo de Vehículos']
                           )
     if metric == 'Promedio':
-        data = mean_days = vehicles.groupby('fuel')['price'].mean().reset_index()
+        data = vehicles.groupby('fuel')['price'].mean().reset_index()
         y_col = 'price'
         title = 'Precio Promedio por Tipo de Combustible'
     elif metric == 'Mediana':
-        data = median_days = vehicles.groupby('fuel')['price'].median().reset_index()
+        data = vehicles.groupby('fuel')['price'].median().reset_index()
         y_col = 'price'
         title= 'Precio Mediano por Tipo de Combustible'
     else:
-        data = count_days = vehicles['fuel'].value_counts().reset_index()
+        data = vehicles['fuel'].value_counts().reset_index()
         data.columns = ['fuel', 'counts']
         y_col = 'counts'
         title='Conteo de Vehículos por Tipo de Combustible'
     # Crea gráfica de barras.
     fig3 = px.bar(data, 
                   x='fuel', 
-                  y='price',
+                  y=y_col,
                   title=title,
-                  labels={'fuel': 'Tipo de Combustible', 'price': 'Precio (USD)' if y_col == 'price' else 'Cantidad de Vehículos'},
+                  labels={'fuel': 'Tipo de Combustible', y_col: 'Precio (USD)' if y_col == 'price' else 'Cantidad de Vehículos'},
                   color='fuel'
                   )
     st.plotly_chart(fig3, use_container_width=True)
