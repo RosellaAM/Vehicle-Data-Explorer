@@ -21,4 +21,4 @@ Puedes acceder a la aplicación desplegada aquí:
 
 🔗 *Enlace alternativo más rápido(Streamlit Cloud)*
 
-👉 https://projecto-sprint-7-app.streamlit.app/
+👉 [[https://https://projecto-sprint-r-7-app.streamlit.app/
