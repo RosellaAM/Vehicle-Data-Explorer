@@ -8,7 +8,7 @@
 
 El proyecto nació de la necesidad de crear más que un análisis estático: una herramienta viva que demostrara habilidades completas en ingeniería de software, desde el análisis inicial hasta el despliegue en producción. Utilizando tecnologías modernas como Streamlit y Plotly, la aplicación ofrece gráficos interactivos con capacidades de filtrado, zoom y detalles bajo demanda, haciendo que el análisis exploratorio de datos sea accesible para todos
 
-## 🎯 Habilidades principales
+## 🎯 Habilidades principales
 * Análisis Exploratorio Rápido: Limpieza de datos, análisis exploratorio (EDA), identificación de patrones. Permite identificar distribuciones, correlaciones y valores atípicos en datos de vehículos.
 * Visualizaciones Interactivas: Genera histogramas y gráficos de dispersión dinámicos utilizando Plotly Express.* 
 * Interfaz Intuitiva: Diseñada con Streamlit para una experiencia de usuario fluida y sin complicaciones.*
