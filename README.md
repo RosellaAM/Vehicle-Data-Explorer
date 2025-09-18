@@ -33,7 +33,7 @@ El proyecto nació de la necesidad de crear más que un análisis estático: una
 👉 https://proyecto-sprint-7-r-app.streamlit.app/
 
 
-## Guia del Contenido 
+## Guia del Contenido 
 Te recomiendo revisar los archivos en el siguiente orden:
 
 1. [README.md](README.md): Este archivo con la documentación completa.
