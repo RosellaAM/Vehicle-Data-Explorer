@@ -45,15 +45,19 @@ Te recomiendo revisar los archivos en el siguiente orden:
 ## Ejecución Local
 Sigue estos pasos para ejecutar una copia local de este proyecto:
 1. Clona el repositorio:
+
    git clone https://github.com/RosellaAM/Vehicle-Data-Explorer.git
    cd vehicle-data-explore
 
-2. Crea el entorno vitual:
-    python -m venv venv
+3. Crea el entorno vitual:
+
+   python -m venv venv
     source venv/bin/activate  # Linux/Mac
 
-3. Instala dependencias:
-    pip install -r requirements.txt
+5. Instala dependencias:
 
-4. Ejecuta la aplicación:
-    streamlit run app.py
+   pip install -r requirements.txt
+
+7. Ejecuta la aplicación:
+
+   streamlit run app.py
