@@ -12,23 +12,19 @@ The project emerged from the need to create more than just a static analysis: a 
 * Rapid Exploratory Analysis: Data cleaning, exploratory data analysis (EDA), pattern identification. Enables identification of distributions, correlations, and outliers in vehicle data.
 * Interactive Visualizations: Generates dynamic histograms and scatter plots using Plotly Express.
 * Intuitive Interface: Built with Streamlit for a seamless, user-friendly experience.
-* Deployment: Deployed on multiple cloud platforms (Render, Streamlit Cloud
+* Deployment: Deployed on multiple cloud platforms (Streamlit Cloud)
 
 ## 🛠️ Tech Stack 
 * **Frontend** -> Streamlit, Plotly Express
 * **Backend** -> Python 3.8+, Pandas, NumPy
-* **Deployment** -> Render, Streamlit Cloud
+* **Deployment** -> Streamlit Cloud
 * **Deployment** -> Virtual environments, Git, Jupyter Notebooks
 
 ## 🚀 Demo
 Test the application now!
 
-🔗 *Primary Link (Render.com)*
-👉 https://proyecto-sprint-7-dk8h.onrender.com/
-
-
-🔗 *Faster Alternative (Streamlit Cloud)*
-👉 https://proyecto-sprint-7-r-app.streamlit.app/
+🔗 *Streamlit Cloud*
+👉 https://vehicle-data-explorer.streamlit.app/
 
 
 ## Documentation Guide
