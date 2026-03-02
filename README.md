@@ -21,10 +21,7 @@ The project emerged from the need to create more than just a static analysis: a 
 * **Deployment** -> Virtual environments, Git, Jupyter Notebooks
 
 ## 🚀 Demo
-Test the application now!
-
-🔗 *Streamlit Cloud*
-👉 https://vehicle-data-explorer.streamlit.app/
+Test the application [now](https://vehicle-data-explorer.streamlit.app/)!
 
 
 ## Documentation Guide
